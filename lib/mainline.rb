@@ -15,7 +15,7 @@ class  Mainline
   end
   
   def do_start
-    options = {:Port => 3005, :Host => "0.0.0.0"}
+    options = {:Port => 3001, :Host => "0.0.0.0"}
     server = Rack::Handler::WEBrick
     require RAILS_ROOT + "/config/environment"
     inner_app = ActionController::Dispatcher.new
