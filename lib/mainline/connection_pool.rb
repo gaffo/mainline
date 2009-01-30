@@ -4,7 +4,6 @@
 class ActiveRecord::ConnectionAdapters::ConnectionPool
   private
   def current_connection_id #:nodoc:
-    Thread.current.object_id
     '1'
   end
 end
