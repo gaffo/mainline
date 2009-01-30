@@ -1,13 +1,17 @@
 Mainline
 ========
 
-Introduction goes here.
+Mainline is a rails plugin which exposes your rails app via webrick to allow
+testing with browser automators such as Selenium or Watir. Mainline allows
+your rails actions to run in the same transaction as your unit tests so you
+can use fixtures, factories, or whatever.
 
+Currently mainline only supports one integration session at a time.
 
-Example
-=======
+Just install it to use it.
 
-Example goes here.
+Links
+=====
 
-
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Code: http://github.com/gaffo/mainline
+Docs: http://rdocul.us/repos/mainline/master/index.html
