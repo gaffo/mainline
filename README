@@ -10,6 +10,8 @@ Currently mainline only supports one integration session at a time.
 
 Just install it to use it.
 
+script/plugins install git://github.com/gaffo/mainline.git
+
 Links
 =====
 
