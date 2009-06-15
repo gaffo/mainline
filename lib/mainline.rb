@@ -16,7 +16,7 @@ class  Mainline
   
   def do_start
     options = {:Port => 3001, :Host => "0.0.0.0"}
-    server = Rack::Handler::WEBrick
+    @server = Rack::Handler::WEBrick
     require RAILS_ROOT + "/config/environment"
     inner_app = ActionController::Dispatcher.new
     app = Rack::Builder.new {
@@ -24,6 +24,10 @@ class  Mainline
       run inner_app
     }.to_app
     trap(:INT) { exit }
-    server.run(app, options.merge(:AccessLog => []))
+    @server.run(app, options.merge(:AccessLog => []))
+  end
+  
+  def exit
+    @server.stop
   end
 end
