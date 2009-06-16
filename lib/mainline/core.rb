@@ -2,6 +2,7 @@ module Mainline
   
   # Configures Mainline. If this is not done, Mainline will not be activated
   def self.enable(configuration = Mainline.configuration)
+    configuration ||= Mainline::Config.new
     yield configuration if block_given?
     @@configuration = configuration
   end
@@ -30,4 +31,6 @@ module Mainline
     end
     
   end
+  
+  
 end
