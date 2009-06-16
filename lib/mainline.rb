@@ -1,33 +1,22 @@
 require 'webrick'
 require 'rack'
 
-class  Mainline
+module Mainline
+  
+  VERSION = "0.0.1"
   def initialize()
     @started = false
   end
   
   def start
     return if @started
-    @started = true
-    Thread.new do 
-      self.do_start
+    Thread.new do
+      @server = Mainline::Server.new(@config)
+      @server.start
     end
+    @started = true
   end
   
-  def do_start
-    options = {:Port => 3001, :Host => "0.0.0.0"}
-    @server = Rack::Handler::WEBrick
-    require RAILS_ROOT + "/config/environment"
-    inner_app = ActionController::Dispatcher.new
-    app = Rack::Builder.new {
-      use Rails::Rack::Static
-      run inner_app
-    }.to_app
-    trap(:INT) { exit }
-    @server.run(app, options.merge(:AccessLog => []))
-  end
-  
-  def exit
-    @server.stop
-  end
 end
+
+require 'mainline/core'

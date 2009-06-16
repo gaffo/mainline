@@ -2,7 +2,7 @@ require 'test_helper'
 
 require 'mainline/config'
 
-class ConfigTest < Test::Unit::TestCase
+class Mainline::ConfigTest < Test::Unit::TestCase
   
   def test_default_port
     config = Mainline::Config.new
