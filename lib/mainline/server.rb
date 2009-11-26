@@ -10,17 +10,8 @@ module Mainline
       @server = Rack::Handler::WEBrick
       require RAILS_ROOT + "/config/environment"
       inner_app = ActionController::Dispatcher.new
-      app = Rack::Builder.new {
-        use Rails::Rack::Static
-        run inner_app
-      }.to_app
-#      
-#      trap(:INT) do 
-#        @server.stop
-#        Kernel.exit
-#        thread.join
-#      end
-      
+      inner_app.send(:build_middleware_stack)
+      app = Rack::Builder.new { run inner_app }.to_app
       @server.run(app, options.merge(:AccessLog => []))
     end
   end
