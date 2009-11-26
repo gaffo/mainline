@@ -52,8 +52,8 @@ ports (for build boxes), you should use somthing like this (pulled from my own c
 Links
 =====
 
-**Code:** http://github.com/gaffo/mainline
+**Code:** <http://github.com/gaffo/mainline>
 
-**Docs:** http://rdocul.us/repos/mainline/master/index.html
+**Docs:** <http://rdocul.us/repos/mainline/master/index.html>
 
-**Bugs:** http://gaffo.lighthouseapp.com/projects/24578-mainline/overview
+**Bugs:** <http://gaffo.lighthouseapp.com/projects/24578-mainline/overview>
