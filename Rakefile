@@ -1,23 +1,21 @@
-require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rubygems'
+gem 'hoe', '>= 2.1.0'
+require 'hoe'
+require 'fileutils'
+require './lib/mainline'
 
-desc 'Default: run unit tests.'
-task :default => :test
+Hoe.plugin :newgem
 
-desc 'Test the mainline plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+# Generate all the Rake tasks
+# Run 'rake -T' to see list of generated tasks (from gem root directory)
+$hoe = Hoe.spec 'mainline' do
+  self.developer 'Mike Gaffney', 'mike@gaffney.fake.com'
+  self.developer 'Dr Nic Williams', 'drnicwilliams@gmail.com'
+  self.extra_deps << ['rack']
 end
 
-desc 'Generate documentation for the mainline plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Mainline'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+require 'newgem/tasks'
+Dir['tasks/**/*.rake'].each { |t| load t }
+
+remove_task :default
+task :default => :spec

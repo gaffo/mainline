@@ -1,10 +1,15 @@
-Mainline
-========
+= mainline
+
+* http://github.com/gaffo/mainline
+
+== DESCRIPTION:
 
 Mainline is a rails plugin which exposes your rails app via webrick to allow
 testing with browser automators such as Selenium or Watir. Mainline allows
 your rails actions to run in the same transaction as your unit tests so you
 can use fixtures, factories, or whatever.
+
+== SYNOPSIS:
 
 Currently mainline only supports one integration session at a time.
 
@@ -49,11 +54,20 @@ ports (for build boxes), you should use somthing like this (pulled from my own c
     end
 
 
-Links
-=====
+== LINKS:
 
-**Code:** <http://github.com/gaffo/mainline>
+* **Code:** <http://github.com/gaffo/mainline>
+* **Docs:** <http://rdocul.us/repos/mainline/master/index.html>
+* **Bugs:** <http://gaffo.lighthouseapp.com/projects/24578-mainline/overview>
 
-**Docs:** <http://rdocul.us/repos/mainline/master/index.html>
+== INSTALL:
 
-**Bugs:** <http://gaffo.lighthouseapp.com/projects/24578-mainline/overview>
+via gem:
+
+    gem install mainline
+    script/generate mainline
+
+via plugin
+
+    script/plugin install git://github.com/gaffo/mainline.git
+    script/generate mainline
