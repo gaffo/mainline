@@ -1,3 +1,7 @@
+require "mainline/config"
+require "mainline/server"
+require "mainline/nil_server"
+
 module Mainline
   
   # Configures Mainline. If this is not done, Mainline will not be activated

@@ -24,3 +24,9 @@ module Mainline
 end
 
 require 'mainline/core'
+
+if ENV['RAILS_ENV'] && ENV['RAILS_ENV'] =~ /^(test|selenium|cucumber)/
+  require 'mainline/connection_pool'
+  require 'mainline/integration_test'
+end
+
