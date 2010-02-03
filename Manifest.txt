@@ -13,6 +13,7 @@ lib/mainline/core.rb
 lib/mainline/integration_test.rb
 lib/mainline/nil_server.rb
 lib/mainline/server.rb
+rails/init.rb
 script/console
 script/destroy
 script/generate
