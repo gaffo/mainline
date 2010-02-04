@@ -16,6 +16,3 @@ end
 
 require 'newgem/tasks'
 Dir['tasks/**/*.rake'].each { |t| load t }
-
-remove_task :default
-task :default => :spec
