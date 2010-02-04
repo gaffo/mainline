@@ -6,7 +6,7 @@ require 'rack'
 
 module Mainline
   
-  VERSION = "1.0.0"
+  VERSION = "1.0.1"
   
   def initialize()
     @started = false
